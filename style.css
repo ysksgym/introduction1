@@ -1,0 +1,200 @@
+@charset "uft-8";
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+header{
+    width: 100vw;
+    height: 80px;
+    background-color: #007BC7;
+    z-index:999;
+    box-sizing: border-box;
+    font-family: 'Hannotate SC',sans-serif;
+}
+.title{
+    float: left;
+    color: white;
+    padding: 0 0 0 30px;
+}
+header ul{
+    float: right;
+    margin: 0;
+    padding: 0 20px 0 0;
+}
+header li{
+    float: left;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+    line-height: 78px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    opacity: 0.5;
+    background-color: white;
+    color: black;
+}
+.header{
+    height: 560px;
+    width: 100vw;
+    background-image: url(http://business4.plala.or.jp/moriyama/images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    font-family: 'Hannotate SC',sans-serif;
+    
+}
+.under-line{
+    width: 50px;
+    height: 3px;
+    background-color: #007BC7;
+    margin: 0 auto;
+}
+.header h1{
+    text-align: center;
+    padding-top: 250px;
+    margin: 0;
+    font-size: 48px;
+}
+.header p{
+    text-align: center;
+    font-size: 24px;
+}
+.profile{
+    height: 560px;
+    width: 100vw;
+    box-sizing: border-box;
+}
+section{
+    padding: 40px;
+}
+section h2,section h2+.under-line+p{
+    text-align: center;
+    margin: 0;
+}
+.profile-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.profile-table{
+    height: 285px;
+    width: 400px;
+    margin: 20px;
+    display: flex;   
+}
+table th{
+    text-align: right;
+    padding-right: 20px;
+}
+table tr{
+    text-align: left;
+    line-height: 50px;
+}
+.selfpr{
+    width: 100vw;
+    background-image: url(http://www65.tok2.com/home2/forest/img185.gif);
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+}
+.selfpr ul{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    padding-right: 25px;
+}
+.selfpr li{
+    border: 1px solid black;
+    width: 20vw;
+    height: 350px;
+    margin: 0 25px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    opacity: 0.5;
+    overflow: auto;
+}
+.selfpr li:hover{
+    opacity: 0.8;
+}
+li h3{
+    text-align: center;
+}
+.vision{
+    height: 700px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
+    width: 100vw;
+}
+.vision h2{
+    padding-top: 40px;
+}
+.vision h3,.vision p{
+    text-align: center;
+}
+.vision h3{
+    font-size: 28px;
+    color: #007BC7;
+}
+.vision h3+p{
+    font-size: 24px;
+    line-height: 50px;
+}
+.nextcomingsoon{
+    color: #007BC7;
+    font-size: 48px;
+    position: absolute;
+    width: 100vw;
+    bottom: -70px;
+}
+footer{
+    width: 100vw;
+    height: 200px;
+    background-color: #007BC7;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+footer a{
+    display: block;
+    height: 80px;
+    margin: 0 auto;
+    text-align: center;
+    width: 150px;
+    border: 5px solid white;
+}
+small{
+    display: block;
+    text-align: center;
+    color: white;
+}
+@media (max-width:800px){
+    .selfpr ul{
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .selfpr li{
+        display: block;
+        width: 100%;
+        height: 150px;
+        margin: 10px;
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+
