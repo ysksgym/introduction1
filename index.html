@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./style.css">
-    <title>webページ作ってみよう</title>
+    <title>introduction1</title>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
         </nav>
     </header>
     <div class="header">
-        <h1>力をつけて、自由に生きたい</h1>
+        <h1>学びは永遠</h1>
         <p>杉山　遊祐 1st Portfolio</p>
     </div>
     <section id="profile" class="profile">
@@ -44,7 +45,7 @@
                 </tr>
                 <tr>
                     <th>Age.</th>
-                    <td>22</td>
+                    <td>23(2019年5月現在)</td>
                 </tr>
                 <tr>
                     <th>Career.</th>
@@ -61,15 +62,16 @@
         <ul>
             <li>
                 <h3>好きなこと</h3>
-                <p>サッカーをする事と見ること、家でゴロゴロしていることが好きです。2017年の夏から毎週日曜に2時間ほどもう一度サッカーをするようになりました。休みの日は家で一日ゴロゴロして、昼寝をしたりして過ごすのが理想的です。1人でいる時間も好きです。（ずっと1人だと寂しくなります笑）</p>
+                <p>サッカーをする事と見ること、家でゴロゴロしていることが好きです。2017年の夏から毎週日曜に2時間ほど、もう一度サッカーをするようになりました。休みの日は家で一日ゴロゴロして、昼寝をしたりして過ごすのが理想的です。1人でいる時間も好きです。（ずっと1人だと寂しくなります笑）
+                </p>
             </li>
             <li>
                 <h3>得意なこと</h3>
-                <p>リフティングです。大学生の時にハマった時期があって、やっていたらほぼ思うようにボールを操れるようになりました。あとは、何も思いつきません笑。</p>
+                <p>リフティングです。大学生の時にハマった時期があって、やっていたらほぼ思うようにボールを操れるようになりました。</p>
             </li>
             <li>
                 <h3>今までの経験</h3>
-                <p>小学校に入学してから、高校３年の4月までサッカーをほぼ毎日していました。しかし、あまり上手くなりませんでした笑。大学に入学してからは、居酒屋で3年間ホールで接客のアルバイトをしていました。</p>
+                <p>小学校に入学してから、高校３年の4月までサッカーをほぼ毎日していました。大学に入学してからは、居酒屋で3年間ホールで接客のアルバイトをしていました。</p>
             </li>
         </ul>
     </section>
@@ -90,6 +92,24 @@
         <a href="#top">TOP</a>
         <small>created by yusukesugiyama</small>
     </footer>
+    <script>
+        $(function () {
+            let $goToTop = $("footer").find('a');
+            $goToTop.click(function () {
+                $('html,body').animate({ scrollTop: 0 });
+            });
+
+            let $headerA = $("header nav ul li a");
+            $headerA.click(function (e) {
+                e.preventDefault();
+                let href = $(this).attr('href'),
+                    $getOffsetTop = $(href).offset().top;
+                $('html,body').animate({ scrollTop: $getOffsetTop });
+            });
+
+
+        });
+    </script>
 </body>
 
 </html>
