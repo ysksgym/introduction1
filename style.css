@@ -25,21 +25,22 @@ header ul{
     display: flex;
     margin: 0;
 }
-header ul li{
+header nav ul li{
     width: 100px;
     height: 80px;
     text-align: center;
     line-height: 80px;
+    position: relative;
+    border: 0px solid white;
+    transition: border 0.5s ease;
 }
 a{
     text-decoration: none;
     display: block;
     color: white;
 }
-li:hover::before{
-    opacity: 0.5;
-    background-color: white;
-    color: black;
+header nav ul li:hover{
+    border: 3px solid white;
 }
 .header{
     height: 560px;
