@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./style.css">
     <title>introduction1</title>
@@ -36,6 +38,7 @@
         <div class="under-line"></div>
         <p>自己紹介</p>
         <div class="profile-box">
+
             <img src="https://lh3.googleusercontent.com/xkvD579mqasmd8pIln_UHVct0o37beq0u9tN90BEfYJZe0p5g2Q9TcWjJw36xivBHPFs-9ZQd_TlmMRL7y_U2CP87XxfKiMRLdr3GtLZUUu-lRkZ1Iw0XWmuHOvQLpFY-J1WV0_JVCw9TgxHs4ZnRtQCwKPdmYlGzxy3Er98Bp5f6tOZ4lM-fxjuZTO8hV8ZbNb1_89Qkzlckq1ST7CFeGUlMq4fpjQCDyhW56HuSQ1RnvXqPbgkbEMjgV2M387BQYdy3OjVK1TZB3EYeIhiKRYutbQrsUuOB_BUu7oa9ZOrZL3ulv-f0MvBiY-4F2c01-YlKn28xS_bYYCnRodp3GdKgG_aNSTbi-SeHSKjOs61TrEWw3bxTl60REY5Xgxayp2f-cxnWiCvPJhY5THW919KjG5HbC4gR0Tc6xaQsxtV5FyC7wGfzA1opooLvQWONb29xwGRDlVLxC4obQpdF1UjFpD_unPjCT7o4K8qsZPV0ZCUA6z60_9YFVewYSVIobirCfCT0g-UZxDVRV1llcnm7uyCZFQ6Xt-_T7Fngqu6av0urcSI3qPMlz40n_VV80yMzgrAcSyjeW2Nf_FZLOq_5Vv6HF7xDxthHD8=w285-h214-no"
                 class="profile-table" alt="">
             <table class="profile-table">
@@ -94,9 +97,10 @@
     </footer>
     <script>
         $(function () {
-            let $goToTop = $("footer").find('a');
+            let $goToTop = $("footer").find('a'),
+                duration = 500;
             $goToTop.click(function () {
-                $('html,body').animate({ scrollTop: 0 });
+                $('html,body').animate({ scrollTop: 0 }, duration);
             });
 
             let $headerA = $("header nav ul li a");
@@ -104,7 +108,7 @@
                 e.preventDefault();
                 let href = $(this).attr('href'),
                     $getOffsetTop = $(href).offset().top;
-                $('html,body').animate({ scrollTop: $getOffsetTop });
+                $('html,body').animate({ scrollTop: $getOffsetTop }, duration);
             });
 
 
