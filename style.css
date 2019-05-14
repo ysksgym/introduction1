@@ -122,6 +122,7 @@ table tr{
     background-color: white;
     opacity: 0.5;
     overflow: auto;
+    transition: all 0.4s ease;
 }
 .selfpr li:hover{
     opacity: 0.8;
