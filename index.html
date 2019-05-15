@@ -38,10 +38,31 @@
         <div class="under-line"></div>
         <p>自己紹介</p>
         <div class="profile-box">
-
-            <img src="https://lh3.googleusercontent.com/xkvD579mqasmd8pIln_UHVct0o37beq0u9tN90BEfYJZe0p5g2Q9TcWjJw36xivBHPFs-9ZQd_TlmMRL7y_U2CP87XxfKiMRLdr3GtLZUUu-lRkZ1Iw0XWmuHOvQLpFY-J1WV0_JVCw9TgxHs4ZnRtQCwKPdmYlGzxy3Er98Bp5f6tOZ4lM-fxjuZTO8hV8ZbNb1_89Qkzlckq1ST7CFeGUlMq4fpjQCDyhW56HuSQ1RnvXqPbgkbEMjgV2M387BQYdy3OjVK1TZB3EYeIhiKRYutbQrsUuOB_BUu7oa9ZOrZL3ulv-f0MvBiY-4F2c01-YlKn28xS_bYYCnRodp3GdKgG_aNSTbi-SeHSKjOs61TrEWw3bxTl60REY5Xgxayp2f-cxnWiCvPJhY5THW919KjG5HbC4gR0Tc6xaQsxtV5FyC7wGfzA1opooLvQWONb29xwGRDlVLxC4obQpdF1UjFpD_unPjCT7o4K8qsZPV0ZCUA6z60_9YFVewYSVIobirCfCT0g-UZxDVRV1llcnm7uyCZFQ6Xt-_T7Fngqu6av0urcSI3qPMlz40n_VV80yMzgrAcSyjeW2Nf_FZLOq_5Vv6HF7xDxthHD8=w285-h214-no"
-                class="profile-table" alt="">
-            <table class="profile-table">
+            <div class="slideshow">
+                <div class="slides">
+                    <a class="slide">
+                        <img src="./img/img1.JPG" alt="">
+                    </a>
+                    <a class="slide">
+                        <img src="./img/img2.JPG" alt="">
+                    </a>
+                    <a class="slide">
+                        <img src="./img/img3.JPG" alt="">
+                    </a>
+                    <a class="slide">
+                        <img src="./img/img4.JPG" alt="">
+                    </a>
+                </div>
+                <div class="slideshow-nav">
+                    <a href="#" class="prev">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="next">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <table class="profile-text">
                 <tr>
                     <th>Name.</th>
                     <td>杉山　遊祐</td>
@@ -98,17 +119,82 @@
     <script>
         $(function () {
             let $goToTop = $("footer").find('a'),
-                duration = 500;
+                scrollDuration = 500,
+                $slide = $(".slide"),
+                $slideGroup = $(".slides"),
+                slideDuration = 700,
+                currentIndex = 0,
+                $nav = $(".slideshow-nav"),
+                $slideshow = $(".slideshow");
+
+            //スクロール
             $goToTop.click(function () {
-                $('html,body').animate({ scrollTop: 0 }, duration);
+                $('html,body').animate({ scrollTop: 0 }, scrollDuration);
             });
             let $headerA = $("header nav ul li a");
             $headerA.click(function (e) {
                 e.preventDefault();
                 let href = $(this).attr('href'),
                     $getOffsetTop = $(href).offset().top;
-                $('html,body').animate({ scrollTop: $getOffsetTop }, duration);
+                $('html,body').animate({ scrollTop: $getOffsetTop }, scrollDuration);
             });
+
+            //スライド
+            $slide.each(function (index) {
+                $(this).css({ left: 100 * index + '%' });
+            });
+            let goToSlide = (index) => {
+                $slideGroup.stop(true).animate({
+                    left: -100 * index + '%'
+                }, slideDuration);
+                currentIndex = index;
+                updateNav();
+            }
+            let updateNav = () => {
+                let $prev = $(".prev"),
+                    $next = $(".next"),
+                    slideCount = $slide.length;
+                if (currentIndex === 0) {
+                    $prev.addClass("disabled");
+                } else {
+                    $prev.removeClass("disabled");
+                }
+                if (currentIndex === slideCount - 1) {
+                    $next.addClass("disabled");
+                } else {
+                    $next.removeClass("disabled");
+                }
+
+            }
+            goToSlide(currentIndex);
+
+            let interval = 3000,
+                timer;
+            function startTimer() {
+                timer = setInterval(function () {
+                    let nextIndex = (currentIndex + 1) % $slide.length;
+                    goToSlide(nextIndex);
+                }, interval);
+            }
+            function stopTimer() {
+                clearInterval(timer);
+            }
+            startTimer();
+
+
+            $slideshow.on({
+                mouseover: stopTimer,
+                mouseout: startTimer
+            });
+            $nav.find("a").click(function (e) {
+                e.preventDefault();
+                if ($(this).hasClass("next")) {
+                    goToSlide(currentIndex + 1);
+                } else {
+                    goToSlide(currentIndex - 1);
+                }
+            });
+
 
 
         });
