@@ -48,7 +48,6 @@ header nav ul li:hover{
     height:calc(100vh - 80px);
     width: 100vw;
     background-image: url(http://business4.plala.or.jp/moriyama/images/bg.jpg);
-    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     font-family: 'Hannotate SC',sans-serif;
