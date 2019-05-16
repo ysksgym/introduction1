@@ -75,6 +75,7 @@ header nav ul li:hover{
 .profile{
     width: 100%;
     box-sizing: border-box;
+    background :white;
 }
 
 section{
@@ -188,6 +189,7 @@ li h3{
     position: relative;
     box-sizing: border-box;
     width: 100vw;
+    background: white;
 }
 .vision h3,.vision p{
     text-align: center;
