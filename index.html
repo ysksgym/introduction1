@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=2">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -40,18 +40,10 @@
         <div class="profile-box">
             <div class="slideshow">
                 <div class="slides">
-                    <a class="slide">
-                        <img src="./img/img1.JPG" alt="">
-                    </a>
-                    <a class="slide">
-                        <img src="./img/img2.JPG" alt="">
-                    </a>
-                    <a class="slide">
-                        <img src="./img/img3.JPG" alt="">
-                    </a>
-                    <a class="slide">
-                        <img src="./img/img4.JPG" alt="">
-                    </a>
+                    <a class="slide"></a>
+                    <a class="slide"></a>
+                    <a class="slide"></a>
+                    <a class="slide"></a>
                 </div>
                 <div class="slideshow-nav">
                     <a href="#" class="prev">
@@ -73,7 +65,7 @@
                 </tr>
                 <tr>
                     <th>Career.</th>
-                    <td>神奈川大学卒業</td>
+                    <td>神奈川大学卒業(2018年卒)</td>
                 </tr>
             </table>
         </div>
@@ -119,7 +111,7 @@
     <script>
         $(function () {
             let $goToTop = $("footer").find('a'),
-                scrollDuration = 500,
+                scrollDuration = 1000,
                 $slide = $(".slide"),
                 $slideGroup = $(".slides"),
                 slideDuration = 700,
@@ -152,7 +144,7 @@
             }
             let updateNav = () => {
                 let $prev = $(".prev"),
-                    $next = $("next"),
+                    $next = $(".next"),
                     slideCount = $slide.length;
                 if (currentIndex === 0) {
                     $prev.addClass("disabled");
@@ -179,14 +171,14 @@
             function stopTimer() {
                 clearInterval(timer);
             }
-            startTimer();
+           // startTimer();
 
 
-            $slideshow.on({
+           /* $slideshow.on({
                 mouseover: stopTimer,
                 mouseout: startTimer
             });
-            $nav.find("a").click(function (e) {
+*/            $nav.find("a").click(function (e) {
                 e.preventDefault();
                 if ($(this).hasClass("next")) {
                     goToSlide(currentIndex + 1);
