@@ -120,6 +120,7 @@
                 $slideshow = $(".slideshow");
 
             //スクロール
+
             $goToTop.click(function () {
                 $('html,body').animate({ scrollTop: 0 }, scrollDuration);
             });
@@ -171,14 +172,14 @@
             function stopTimer() {
                 clearInterval(timer);
             }
-           // startTimer();
+            // startTimer();
 
 
-           /* $slideshow.on({
-                mouseover: stopTimer,
-                mouseout: startTimer
-            });
-*/            $nav.find("a").click(function (e) {
+            /* $slideshow.on({
+                 mouseover: stopTimer,
+                 mouseout: startTimer
+             });*/
+            $nav.find("a").click(function (e) {
                 e.preventDefault();
                 if ($(this).hasClass("next")) {
                     goToSlide(currentIndex + 1);
@@ -190,6 +191,8 @@
 
 
         });
+
+
     </script>
 </body>
 
