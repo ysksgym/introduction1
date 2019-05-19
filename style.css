@@ -75,10 +75,14 @@ header nav ul li:hover{
     width: 100%;
     box-sizing: border-box;
     background :white;
+    z-index: -99;
 }
-
+.sticky{
+    position: sticky;
+    top: 80px;
+}
 section{
-    padding: 80px 40px 40px 40px;
+    padding:40px;
     height: calc(100vh - 80px);
 }
 section h2,section h2+.under-line+p{
@@ -155,10 +159,11 @@ table tr{
 }
 .selfpr{
     width: 100%;
-    background-image: url(http://www65.tok2.com/home2/forest/img185.gif);
+    background-color:#007BC7 ;
     background-size: cover;
     background-position: center;
     box-sizing: border-box;
+    z-index: -50;
 }
 .selfpr ul{
     display: flex;
@@ -185,10 +190,10 @@ li h3{
     text-align: center;
 }
 .vision{
-    position: relative;
     box-sizing: border-box;
-    width: 100vw;
+    width: 100%;
     background: white;
+    z-index: -30;
 }
 .vision h3,.vision p{
     text-align: center;
@@ -204,9 +209,8 @@ li h3{
 .nextcomingsoon{
     color: #007BC7;
     font-size: 48px;
-    position: absolute;
-    bottom: -20px;
-    left: 33%;
+    position: relative;
+    bottom: -100px;
     margin: 0;
 }
 footer{
