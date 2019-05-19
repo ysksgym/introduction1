@@ -186,13 +186,13 @@
             function stopTimer() {
                 clearInterval(timer);
             }
-            // startTimer();
+            startTimer();
 
 
-            /* $slideshow.on({
-                 mouseover: stopTimer,
-                 mouseout: startTimer
-             });*/
+            $slideshow.on({
+                mouseover: stopTimer,
+                mouseout: startTimer
+            });
             $nav.find("a").click(function (e) {
                 e.preventDefault();
                 if ($(this).hasClass("next")) {
