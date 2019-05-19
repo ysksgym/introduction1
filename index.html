@@ -128,7 +128,7 @@
                 e.preventDefault();
                 let href = $(this).attr('href'),
                     $getOffsetTop = $(href).offset().top;
-                $('html,body').animate({ scrollTop: $getOffsetTop }, scrollDuration);
+                $('html,body').animate({ scrollTop: $getOffsetTop - 80 + 'px' }, scrollDuration);
             });
 
             //スライド
