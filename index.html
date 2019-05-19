@@ -132,14 +132,17 @@
                 $('html,body').animate({ scrollTop: $getOffsetTop - 80 + 'px' }, scrollDuration);
             });
             $window.scroll(function () {
-                if ($(this).scrollTop() >= $(".profile").offset().top - 80) {
-                    $(".profile").addClass("sticky");
+                let $profile = $(".profile"),
+                    $selfpr = $(".selfpr"),
+                    $vision = $(".vision");
+                if ($(this).scrollTop() >= $profile.offset().top - 80) {
+                    $profile.addClass("sticky");
                 }
-                if ($(this).scrollTop() >= $(".selfpr").offset().top - 80) {
-                    $(".selfpr").addClass("sticky");
+                if ($(this).scrollTop() >= $selfpr.offset().top - 80) {
+                    $selfpr.addClass("sticky");
                 }
-                if ($(this).scrollTop() >= $(".vision").offset().top - 80) {
-                    $(".vision").addClass("sticky");
+                if ($(this).scrollTop() >= $vision.offset().top - 80) {
+                    $vision.addClass("sticky");
                 }
             });
 
