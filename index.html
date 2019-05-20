@@ -125,15 +125,12 @@
                 $('html,body').animate({ scrollTop: 0 }, scrollDuration);
             });
             $("header nav ul li a").each(function (i) {
-                let $headerA = $(this);
+                let $headerA = $(this),
+                    href = $headerA.attr('href'),
+                    $getOffsetTop = $(href).offset().top;
                 $headerA.click(function (e) {
                     e.preventDefault();
-                    let href = $headerA.attr('href'),
-                        $getOffsetTop = $(href).offset().top;
                     $('html,body').animate({ scrollTop: $getOffsetTop - 80 + 'px' }, scrollDuration);
-                    if ($window.scrollTop() >= $getOffsetTop - 80) {
-                        $('html,body').animate({ scrollTop: (i + 1) * 741 + 'px' }, scrollDuration);
-                    }
                 });
             });
             $window.scroll(function () {
