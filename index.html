@@ -124,26 +124,25 @@
             $goToTop.click(function () {
                 $('html,body').animate({ scrollTop: 0 }, scrollDuration);
             });
-            let $headerA = $("header nav ul li a");
-            $headerA.click(function (e) {
-                e.preventDefault();
-                let href = $(this).attr('href'),
-                    $getOffsetTop = $(href).offset().top;
-                $('html,body').animate({ scrollTop: $getOffsetTop - 80 + 'px' }, scrollDuration);
+            $("header nav ul li a").each(function (i) {
+                let $headerA = $(this);
+                $headerA.click(function (e) {
+                    e.preventDefault();
+                    let href = $headerA.attr('href'),
+                        $getOffsetTop = $(href).offset().top;
+                    $('html,body').animate({ scrollTop: $getOffsetTop - 80 + 'px' }, scrollDuration);
+                    if ($window.scrollTop() >= $getOffsetTop - 80) {
+                        $('html,body').animate({ scrollTop: (i + 1) * 741 + 'px' }, scrollDuration);
+                    }
+                });
             });
             $window.scroll(function () {
-                let $profile = $(".profile"),
-                    $selfpr = $(".selfpr"),
-                    $vision = $(".vision");
-                if ($(this).scrollTop() >= $profile.offset().top - 80) {
-                    $profile.addClass("sticky");
-                }
-                if ($(this).scrollTop() >= $selfpr.offset().top - 80) {
-                    $selfpr.addClass("sticky");
-                }
-                if ($(this).scrollTop() >= $vision.offset().top - 80) {
-                    $vision.addClass("sticky");
-                }
+                $("section").each(function (i) {
+                    let $section = $(this);
+                    if ($window.scrollTop() >= $section.offset().top - 80) {
+                        $section.addClass("sticky");
+                    }
+                });
             });
 
             //スライド

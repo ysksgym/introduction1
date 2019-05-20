@@ -15,6 +15,7 @@ header{
     opacity: 0.8;
     position: fixed;
     top: 0;
+    box-sizing: border-box;
 }
 header nav{
     display: flex;
@@ -84,6 +85,7 @@ header nav ul li:hover{
 section{
     padding:40px;
     height: calc(100vh - 80px);
+    box-sizing: border-box;
 }
 section h2,section h2+.under-line+p{
     text-align: center;
