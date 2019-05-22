@@ -130,7 +130,7 @@
             $goToTop.click(function () {
                 $('html,body').animate({ scrollTop: 0 }, scrollDuration);
             });
-            $("header nav ul li a").each(function (i) {
+            $("header nav ul li a").each(function () {
                 let $headerA = $(this),
                     href = $headerA.attr('href'),
                     $getOffsetTop = $(href).offset().top;
@@ -140,7 +140,7 @@
                 });
             });
             $window.scroll(function () {
-                $("section").each(function (i) {
+                $("section").each(function () {
                     let $section = $(this);
                     if ($window.scrollTop() >= $section.offset().top - 80) {
                         $section.addClass("sticky");
