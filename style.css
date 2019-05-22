@@ -34,16 +34,32 @@ header nav ul li{
     text-align: center;
     line-height: 80px;
     position: relative;
-    border: 0px solid white;
-    transition: border 0.5s ease;
+    border: none;
 }
 header nav ul li a{
+    position: relative;
     text-decoration: none;
     display: block;
     color: white;
+    font-size: 24px;
 }
-header nav ul li:hover{
-    border: 3px solid white;
+header nav ul li a > span{
+    position: absolute;
+    left: 0;
+    width: 0px;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+header nav ul li a span span{
+    height: 100%;
+    width: 100px;
+    color: #007BC7;
+    background-color: white;
+    display: block;
+}
+header nav ul li a:hover span{
+    width: 100px;
 }
 .header{
     height:100vh;
