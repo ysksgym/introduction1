@@ -46,20 +46,20 @@ header nav ul li a{
 header nav ul li a > span{
     position: absolute;
     left: 0;
-    width: 0px;
-    height: 100%;
+    width: 100%;
+    height: 0;
     overflow: hidden;
     transition: all 0.5s;
 }
 header nav ul li a span span{
-    height: 100%;
+    height: 80px;
     width: 100px;
     color: #007BC7;
     background-color: white;
     display: block;
 }
 header nav ul li a:hover span{
-    width: 100px;
+    height: 80px;
 }
 .header{
     height:100vh;
